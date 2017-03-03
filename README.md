@@ -43,6 +43,24 @@ In your project, you can create a mean stack framework.
 yo tmj-mean
 ```
 
+Once it finished, run this command:
+
+```{r, engine='sh'}
+grunt
+```
+
+Be sure to have [grunt](https://gruntjs.com/) installed before doing it so.
+
+## Testing
+
+This project used `jasmine` as a testing framework. Before you make a test, you need to install [karma](https://karma-runner.github.io/latest/intro/installation.html) globally. Feel free to modify your own configuration in `karma.conf.js`.
+
+After that, you can now run test by this command:
+
+```{r, engine='sh'}
+karma start
+```
+
 ## Folder Structure
 
 ```
@@ -58,10 +76,10 @@ yo tmj-mean
 │   ├── home/
 │   ├── shared/
 │   └── user/
-├── public/ (it will generate using [Grunt](https://gruntjs.com/))
-│   ├── assets/
-│   │   └── css/
-│   └── dist/
+├── * public/
+│   ├── * assets/
+│   │   └── * css/
+│   └── * dist/
 ├── resources/
 │   ├── assets/
 │   └── views/
@@ -71,6 +89,9 @@ yo tmj-mean
 ├── tests/
 └── vendor/
 ```
+
+**Legend:**
+- Asterisk (*) - it will generate using `grunt`
 
 ## Credits
 
