@@ -1,0 +1,6 @@
+.env
+/.sass-cache
+/public/assets
+/public/dist
+/node_modules
+/bower_components
