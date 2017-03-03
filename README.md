@@ -1,4 +1,4 @@
-# TMJ Mean Stack Framework
+# TMJ Mean Stack Framework Generator
 [![npm version](https://img.shields.io/npm/v/generator-tmj-mean.svg)](https://www.npmjs.org/package/generator-tmj-mean)
 
 Mean Stack Framework Generator using Yeoman
