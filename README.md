@@ -63,7 +63,6 @@ Then finally, start your application by running this command:
 nodemon
 ```
 
-
 ## Testing
 
 This project used `jasmine` as a testing framework. Before you make a test, you need to install [karma](https://karma-runner.github.io/latest/intro/installation.html) globally. Feel free to modify your own configuration in `karma.conf.js`.
@@ -84,7 +83,6 @@ karma start
 │   │   ├── client/
 │   │   │   └── module/
 │   │   └── server/
-│   │       └── middleware/
 │   ├── core/
 │   ├── home/
 │   ├── shared/
@@ -99,7 +97,6 @@ karma start
 │       ├── auth/
 │       ├── layouts/
 │       └── web/
-├── tests/
 └── vendor/
 ```
 
