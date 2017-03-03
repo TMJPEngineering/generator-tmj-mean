@@ -16,7 +16,7 @@ $ npm install yo -g
 You need to download or clone this to a new project locally name it `generator-tmj-mean`. Then run it in git shell.
 
 ```{r, engine='sh'}
-git clone https://github.com/TMJPEngineering/generator-tmj-mean.git > generator-tmj-mean
+$ git clone https://github.com/TMJPEngineering/generator-tmj-mean.git > generator-tmj-mean
 ```
 
 Go to the root directory of this project, then type:
