@@ -7,22 +7,22 @@ Mean Stack Framework Generator using Yeoman
 
 You will need to install `yeoman` using `npm`. Be sure to have [NodeJS](https://nodejs.org/en/download/) installed before doing it so.
 
-```{r, engine='sh'}
-$ npm install yo -g
+```
+npm install yo -g
 ```
 
 ### Locally
 
 You need to download or clone this to a new project locally name it `generator-tmj-mean`. Then run it in git shell.
 
-```{r, engine='sh'}
-$ git clone https://github.com/TMJPEngineering/generator-tmj-mean.git > generator-tmj-mean
+```
+git clone https://github.com/TMJPEngineering/generator-tmj-mean.git > generator-tmj-mean
 ```
 
 Go to the root directory of this project, then type:
 
-```{r, engine='sh'}
-$ npm link
+```
+npm link
 ```
 
 That will install this generator dependencies and symlink a global module to your local file. After `npm` is done your good to go to your project.
@@ -31,22 +31,22 @@ That will install this generator dependencies and symlink a global module to you
 
 Or if you don't want to download or clone this, you can install it using `npm`:
 
-```{r, engine='sh'}
-$ npm install -g generator-tmj-mean
+```
+npm install -g generator-tmj-mean
 ```
 
 ## Usage
 
 In your project, you can create a mean stack framework.
 
-```{r, engine='sh'}
-$ yo tmj-mean
+```
+yo tmj-mean
 ```
 
 Once it finished, run this command:
 
-```{r, engine='sh'}
-$ grunt
+```
+grunt
 ```
 
 Be sure to have [grunt](https://gruntjs.com/) installed before doing it so.
@@ -57,8 +57,8 @@ This project used `jasmine` as a testing framework. Before you make a test, you 
 
 After that, you can now run test by this command:
 
-```{r, engine='sh'}
-$ karma start
+```
+karma start
 ```
 
 ## Folder Structure
