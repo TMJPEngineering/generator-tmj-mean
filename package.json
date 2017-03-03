@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": {
+  	"generators"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TMJPEngineering/generator-tmj-mean.git"
   },
   "keywords": [
     "yeoman-generator",
-    "tmj-generator"
+    "tmj-generator",
+    "mean-stack"
   ],
   "author": "TMJP Engineering Team",
   "license": "MIT",

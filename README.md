@@ -27,25 +27,25 @@ yo tmj-mean
 ## Folder Structure
 
 ```
-config/
-  ├── lib/
-modules/
-  ├── auth/
-    ├── client/
-      ├── module/
-    ├── server/
-      ├── middleware/
-  ├── core/
-  ├── home/
-  ├── shared/
-  ├── user/
-public/
-resources/
-  ├── assets/
-  ├── views/
-    ├── auth/
-    ├── layouts/
-    ├── web/
-tests/
-vendor/
+├── config/
+│   └── lib/
+└── modules/
+│   ├── auth/
+│   │   ├── client/
+│   │   │   └── module/
+│   │   └── server/
+│   │       └── middleware/
+│   ├── core/
+│   ├── home/
+│   ├── shared/
+│   └── user/
+├── public/
+├── resources/
+│   ├── assets/
+│   └── views/
+│       ├── auth/
+│       ├── layouts/
+│       └── web/
+├── tests/
+└── vendor/
 ```
