@@ -2,12 +2,12 @@
 
 module.exports = function (method) {
     var methods = {
-        protected: protected
+        protect: protect
     };
 
     return methods[method]();
 
-    function protected() {
+    function protect() {
         return function (req, res, next) {
             if ( !! req.session.passport && !! req.session.passport.user ) {
                 return next();
