@@ -7,10 +7,6 @@ module.exports = function(grunt) {
             }
         },
         browserify: {
-            auth: {
-                src: 'modules/auth/client/*.js',
-                dest: 'public/dist/auth/auth.js'
-            },
             core: {
                 src: 'modules/core/client/app/*.js',
                 dest: 'public/dist/core/core.js'
@@ -26,25 +22,19 @@ module.exports = function(grunt) {
                 ],
                 dest: 'public/dist/modules.js'
             },
-            home: {
-                src: 'modules/home/client/*.js',
-                dest: 'public/dist/home/home.js'
-            },
             shared: {
                 src: 'modules/shared/client/**/*.js',
                 dest: 'public/dist/shared/shared.js'
             },
-            user: {
-                src: 'modules/user/client/**/*.js',
-                dest: 'public/dist/user/user.js'
+            client: {
+                src: [
+                    'modules/**/client/*.js',
+                    '!modules/**/client/module/*.js'
+                ],
+                dest: 'public/dist/client.js'
             }
         },
         uglify: {
-            auth: {
-                options: { mangle: false, compress: true },
-                src: 'public/dist/auth/auth.js',
-                dest: 'public/dist/auth/auth.min.js'
-            },
             core: {
                 options: { mangle: false, compress: true },
                 src: 'public/dist/core/core.js',
@@ -60,26 +50,21 @@ module.exports = function(grunt) {
                 src: 'public/dist/modules.js',
                 dest: 'public/dist/modules.min.js'
             },
-            home: {
-                options: { mangle: false, compress: true },
-                src: 'public/dist/home/home.js',
-                dest: 'public/dist/home/home.min.js'
-            },
             shared: {
                 options: { mangle: false, compress: true },
                 src: 'public/dist/shared/shared.js',
                 dest: 'public/dist/shared/shared.min.js'
             },
-            user: {
+            client: {
                 options: { mangle: false, compress: true },
-                src: 'public/dist/user/user.js',
-                dest: 'public/dist/user/user.min.js'
+                src: 'public/dist/client.js',
+                dest: 'public/dist/client.min.js'
             }
         },
         sass: {
             dist: {
                 files: {
-                    'public/assets/css/style.css' : 'resources/assets/style.scss'
+                    'public/assets/css/style.css': 'resources/assets/style.scss'
                 }
             }
         }

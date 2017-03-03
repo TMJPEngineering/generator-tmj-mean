@@ -51,11 +51,18 @@ grunt
 
 Be sure to have [grunt](https://gruntjs.com/) installed before doing it so.
 
+Before you start your application, check first if you have `nodemon`. If not, install this:
+
+```
+npm install -g nodemon
+```
+	
 Then finally, start your application by running this command:
 
 ```
-npm start
+nodemon
 ```
+
 
 ## Testing
 
