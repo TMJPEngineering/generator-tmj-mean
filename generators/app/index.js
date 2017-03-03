@@ -52,7 +52,7 @@ module.exports = generator.extend({
         config: function () {
             this.fs.copy(
                 this.templatePath('.env.example'),
-                this.destinationPath('.env.example')
+                this.destinationPath('.env')
             );
 
             this.fs.copy(
