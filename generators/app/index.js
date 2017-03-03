@@ -1,14 +1,14 @@
 'use strict';
 
-var generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+var generator = require('yeoman-generator'),
+    chalk = require('chalk'),
+    yosay = require('yosay');
 
 module.exports = generator.extend({
     prompting: function () {
         // Have Yeoman greet the user.
         this.log(yosay(
-          'Welcome to the ' + chalk.red('TMJ Mean Stack Framework') + ' generator!'
+            'Welcome to the fine ' + chalk.red('TMJ Mean Stack Framework') + ' generator!'
         ));
 
         var prompts = [{

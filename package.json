@@ -1,8 +1,8 @@
 {
   "name": "generator-tmj-mean",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TMJ Mean Stack Framework Generator",
-  "main": "index.js",
+  "main": "generators/app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/TMJPEngineering/generator-tmj-mean/issues"
   },
-  "homepage": "https://github.com/TMJPEngineering/generator-tmj-mean#readme",
   "dependencies": {
     "yeoman-generator": "^1.0.0",
     "chalk": "^1.1.3",
