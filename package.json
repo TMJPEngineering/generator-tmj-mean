@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": {
-  	"generators"
-  },
+  "files": [
+    "generators"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TMJPEngineering/generator-tmj-mean.git"
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/TMJPEngineering/generator-tmj-mean/issues"
   },
-  "homepage": "https://github.com/TMJPEngineering/generator-tmj-mean#readme"
+  "homepage": "https://github.com/TMJPEngineering/generator-tmj-mean#readme",
+  "dependencies": {
+    "yeoman-generator": "^1.1.0"
+  }
 }
