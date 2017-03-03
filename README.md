@@ -58,7 +58,10 @@ yo tmj-mean
 │   ├── home/
 │   ├── shared/
 │   └── user/
-├── public/
+├── public/ (it will generate using [Grunt](https://gruntjs.com/))
+│   ├── assets/
+│   │   └── css/
+│   └── dist/
 ├── resources/
 │   ├── assets/
 │   └── views/
