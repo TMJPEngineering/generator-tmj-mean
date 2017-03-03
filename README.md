@@ -1,5 +1,5 @@
 # TMJ Mean Stack Framework
-[![npm version](https://img.shields.io/npm/v/tmj-pagination.svg)](https://www.npmjs.org/package/generator-tmj-mean)
+[![npm version](https://img.shields.io/npm/v/generator-tmj-mean.svg)](https://www.npmjs.org/package/generator-tmj-mean)
 
 Mean Stack Framework Generator using Yeoman
 
