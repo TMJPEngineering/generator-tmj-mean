@@ -51,6 +51,12 @@ grunt
 
 Be sure to have [grunt](https://gruntjs.com/) installed before doing it so.
 
+Then finally, start your application by running this command:
+
+```
+npm start
+```
+
 ## Testing
 
 This project used `jasmine` as a testing framework. Before you make a test, you need to install [karma](https://karma-runner.github.io/latest/intro/installation.html) globally. Feel free to modify your own configuration in `karma.conf.js`.
@@ -91,6 +97,12 @@ karma start
 ```
 
 **NOTE:** This *asterisk symbol* shows that it will be generated using `grunt`.
+
+## Issues
+
+- **MongoError: failed to connect to server [localhost:27017] on first connect**
+  - If this error shows up in your terminal, you need to install `MongoDB` then run the `mongod` server. See [here](https://docs.mongodb.com/manual/administration/install-community/) for installation.
+- Any other issues, post it [here](https://github.com/TMJPEngineering/generator-tmj-mean/issues/new) then assign [me](https://github.com/jcmlumacad).
 
 ## Credits
 
