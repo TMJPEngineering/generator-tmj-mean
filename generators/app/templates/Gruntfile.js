@@ -1,10 +1,20 @@
+'use strict';
+
 module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
-            src: {
-                files: ['modules/**/*.js', '!modules/**/server/*.js', '!modules/**/server/**/*.js', 'resources/assets/style.scss'],
+            livereload: {
+                options: {
+                    livereload: true
+                },
+                files: [
+                    'modules/**/*',
+                    '!modules/**/server/*.js',
+                    '!modules/**/server/**/*.js',
+                    'resources/assets/style.scss'
+                ],
                 tasks: ['browserify', 'uglify', 'sass']
-            }
+            },
         },
         browserify: {
             core: {
