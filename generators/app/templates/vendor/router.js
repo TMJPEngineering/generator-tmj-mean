@@ -14,15 +14,29 @@ module.exports = {
         this.config.app = app;
     },
     get: function (uri, controller, auth) {
-        var str = controller.split('@');
-        var module = str[0].split('.');
-        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(str[0], str[1], module[0]));
+        var str = controller.split('@'),
+            controller = str.shift(),
+            module = controller.split('.');
+        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(controller, str.shift(), module.shift()));
         return this;
     },
     post: function (uri, controller, auth) {
-        var str = controller.split('@');
-        var module = str[0].split('.');
-        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(str[0], str[1], module[0]));
+        var str = controller.split('@'),
+            controller = str.shift(),
+            module = controller.split('.');
+        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(controller, str.shift(), module.shift()));
+    },
+    update: function (uri, controller, auth) {
+        var str = controller.split('@'),
+            controller = str.shift(),
+            module = controller.split('.');
+        this.config.app.put(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(controller, str.shift(), module.shift()));
+    },
+    delete: function (uri, controller, auth) {
+        var str = controller.split('@'),
+            controller = str.shift(),
+            module = controller.split('.');
+        this.config.app.delete(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(controller, str.shift(), module.shift()));
     },
     all: function (uri, callback) {
         this.config.app.all(uri, function (req, res) {

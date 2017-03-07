@@ -12,7 +12,7 @@ module.exports = function (app) {
     app.use(cookieParser(Math.random().toString(36).substring(7)));
     app.use(csrfProtection);
     app.use(helmet());
-    app.use(methodOverride('_method'));
+    app.use(methodOverride('X-HTTP-Method-Override'));
     app.use(session({
         secret: process.env.SESSION_SECRET || 'secret',
         resave: false,
