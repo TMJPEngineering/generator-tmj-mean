@@ -39,6 +39,7 @@ module.exports = function(grunt) {
             client: {
                 src: [
                     'modules/**/client/*.js',
+                    '!modules/**/client/*.test.js',
                     '!modules/**/client/module/*.js'
                 ],
                 dest: 'public/dist/client.js'
