@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                     'modules/**/*',
                     '!modules/**/server/*.js',
                     '!modules/**/server/**/*.js',
-                    'resources/assets/style.scss'
+                    'resources/assets/*.scss'
                 ],
                 tasks: ['browserify', 'uglify', 'sass']
             },
@@ -39,6 +39,7 @@ module.exports = function(grunt) {
             client: {
                 src: [
                     'modules/**/client/*.js',
+                    '!modules/**/client/*.test.js',
                     '!modules/**/client/module/*.js'
                 ],
                 dest: 'public/dist/client.js'
