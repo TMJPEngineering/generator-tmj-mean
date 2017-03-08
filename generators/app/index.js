@@ -124,11 +124,6 @@ module.exports = generator.extend({
             )
 
             this.fs.copy(
-                this.templatePath('tests/.gitkeep'),
-                this.destinationPath('tests/.gitkeep')
-            );
-
-            this.fs.copy(
                 this.templatePath('vendor'),
                 this.destinationPath('vendor')
             );
@@ -160,9 +155,8 @@ module.exports = generator.extend({
     }
 });
 
-String.prototype.ucwords = function(str) {
-    str = this.toLowerCase();
-    return str.replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
+String.prototype.ucwords = function() {
+    return this.toLowerCase().replace(/(^([a-zA-Z\p{M}]))|([ -][a-zA-Z\p{M}])/g,
         function($1){
             return $1.toUpperCase();
         });
