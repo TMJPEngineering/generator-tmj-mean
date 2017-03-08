@@ -160,4 +160,4 @@ String.prototype.ucwords = function() {
         function($1){
             return $1.toUpperCase();
         });
-}
+};

@@ -11,8 +11,8 @@ module.exports = {
         set: function (controller) {
             router = {
                 str: controller.split('@'),
-                controller: controller.split('@').shift(),
-                module: controller.split('@').shift().split('.')
+                controller: controller.split('@').shift().toController(),
+                module: controller.split('@').shift().toModule()
             };
         },
         callback: function (res, req, next) {
@@ -24,20 +24,20 @@ module.exports = {
     },
     get: function (uri, controller, auth) {
         this.config.set(controller);
-        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module));
         return this;
     },
     post: function (uri, controller, auth) {
         this.config.set(controller);
-        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module));
     },
     update: function (uri, controller, auth) {
         this.config.set(controller);
-        this.config.app.put(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.put(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module));
     },
     delete: function (uri, controller, auth) {
         this.config.set(controller);
-        this.config.app.delete(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.delete(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module));
     },
     resource: function (uri, controller, auth, options) {
         this.config.set(controller);
