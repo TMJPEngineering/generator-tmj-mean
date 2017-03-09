@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = function (file, method, module) {
-    return require("./../modules/" + module + '/server/' + file)(method);
+    return require("./../modules/" + module + '/Server/Controllers/' + file)(method);
 };
