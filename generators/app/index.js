@@ -141,13 +141,6 @@ module.exports = generator.extend({
                     name: this.props.name
                 }
             );
-
-            this.fs.copyTpl(
-                this.templatePath('_resources/auth/nav.html'),
-                this.destinationPath('resources/views/auth/nav.html'), {
-                    name: this.props.name
-                }
-            );
         },
         install: function () {
             this.installDependencies();
