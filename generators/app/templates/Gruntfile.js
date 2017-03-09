@@ -9,8 +9,8 @@ module.exports = function(grunt) {
                 },
                 files: [
                     'modules/**/*',
-                    '!modules/**/server/*.js',
-                    '!modules/**/server/**/*.js',
+                    '!modules/**/Server/*.js',
+                    '!modules/**/Server/**/*.js',
                     'resources/assets/*.scss'
                 ],
                 tasks: ['browserify', 'uglify', 'sass']
@@ -18,29 +18,34 @@ module.exports = function(grunt) {
         },
         browserify: {
             core: {
-                src: 'modules/core/client/app/*.js',
+                src: 'modules/Core/Client/App/*.js',
                 dest: 'public/dist/core/core.js'
             },
             config: {
-                src: 'modules/core/client/config/*.js',
+                src: 'modules/Core/Client/Config/*.js',
                 dest: 'public/dist/config/config.js'
             },
             modules: {
                 src: [
-                    'modules/**/client/module/*.js',
-                    'modules/shared/client/**/module/*.js'
+                    'modules/**/Client/*.module.js',
+                    'modules/Shared/Client/**/*.module.js'
                 ],
                 dest: 'public/dist/modules.js'
             },
             shared: {
-                src: 'modules/shared/client/**/*.js',
+                src: [
+                    'modules/Shared/Client/**/*.js',
+                    '!modules/Shared/Client/**/*.module.js'
+                ],
                 dest: 'public/dist/shared/shared.js'
             },
             client: {
                 src: [
-                    'modules/**/client/*.js',
-                    '!modules/**/client/*.test.js',
-                    '!modules/**/client/module/*.js'
+                    'modules/**/Client/**/*.js',
+                    '!modules/Core/Client/**/*.js',
+                    '!modules/**/Client/**/*.test.js',
+                    '!modules/Shared/Client/**/*.module.js',
+                    '!modules/**/Client/*.module.js'
                 ],
                 dest: 'public/dist/client.js'
             }
