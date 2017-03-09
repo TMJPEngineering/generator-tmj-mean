@@ -9,10 +9,10 @@ module.exports = {
     config: {
         app: null,
         set: function (controller) {
+            var str = controller.split('@');
             router = {
-                str: controller.split('@'),
-                controller: controller.split('@').shift(),
-                module: controller.split('@').shift().split('.')
+                str: str,
+                controller: str.shift().toController()
             };
         },
         callback: function (res, req, next) {
@@ -22,24 +22,24 @@ module.exports = {
     setApp: function (app) {
         this.config.app = app;
     },
-    get: function (uri, controller, auth) {
+    get: function (uri, controller, auth, module) {
         this.config.set(controller);
-        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.get(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), module));
         return this;
     },
-    post: function (uri, controller, auth) {
+    post: function (uri, controller, auth, module) {
         this.config.set(controller);
-        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.post(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), module));
     },
-    update: function (uri, controller, auth) {
+    update: function (uri, controller, auth, module) {
         this.config.set(controller);
-        this.config.app.put(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.put(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), module));
     },
-    delete: function (uri, controller, auth) {
+    delete: function (uri, controller, auth, module) {
         this.config.set(controller);
-        this.config.app.delete(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), router.module.shift()));
+        this.config.app.delete(uri, (auth) ? middleware(auth) : this.config.callback, ctrl(router.controller, router.str.pop(), module));
     },
-    resource: function (uri, controller, auth, options) {
+    resource: function (uri, controller, auth, module, options) {
         this.config.set(controller);
         var $this = this;
         resources = resources.filter(function(value) {
@@ -61,16 +61,16 @@ module.exports = {
                 if (resource == 'edit') {
                     str = '/:id/edit';
                 }
-                $this.get(uri + str, router.controller + '@' + resource, auth);
+                $this.get(uri + str, router.controller + '@' + resource, auth, module);
             }
             if (resource == 'store') {
-                $this.post(uri, router.controller + '@' + resource, auth);
+                $this.post(uri, router.controller + '@' + resource, auth, module);
             }
             if (resource == 'update') {
-                $this.put(uri + '/:id', router.controller + '@' + resource, auth);
+                $this.put(uri + '/:id', router.controller + '@' + resource, auth, module);
             }
             if (resource == 'delete') {
-                $this.delete(uri + '/:id', router.controller + '@' + resource, auth);
+                $this.delete(uri + '/:id', router.controller + '@' + resource, auth, module);
             }
         });
     },

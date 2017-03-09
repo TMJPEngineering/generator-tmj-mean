@@ -11,6 +11,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/views', express.static(__dirname + '/resources/views'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+require('./config/lib/helpers');
 require('./config/lib/body-parser')(app);
 require('./config/lib/middleware')(app);
 require('./config/lib/csrf')(app);
