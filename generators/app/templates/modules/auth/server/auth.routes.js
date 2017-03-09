@@ -3,11 +3,11 @@
 var route = require('./../../../vendor/router');
 
 module.exports = function (app) {
-    route.get('/', 'AuthController@index', ['auth.middleware.protect']);
+    route.get('/', 'AuthController@index', ['auth.middleware.protect'], 'auth');
 
-    route.get('/login', 'AuthController@login');
-    route.get('/register', 'AuthController@register');
+    route.get('/login', 'AuthController@login', [], 'auth');
+    route.get('/register', 'AuthController@register', [], 'auth');
 
-    route.post('/login', 'AuthController@login');
-    route.post('/register', 'AuthController@register');
+    route.post('/login', 'AuthController@login', [], 'auth');
+    route.post('/register', 'AuthController@register', [], 'auth');
 };
