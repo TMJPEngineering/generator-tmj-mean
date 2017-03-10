@@ -14,6 +14,7 @@ module.exports = function (method) {
             }
 
             res.redirect('/login');
+            return;
         }
     }
 };
