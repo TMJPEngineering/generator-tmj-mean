@@ -129,15 +129,8 @@ module.exports = generator.extend({
             );
 
             this.fs.copyTpl(
-                this.templatePath('_resources/views/index.html'),
-                this.destinationPath('resources/views/index.html'), {
-                    name: this.props.name
-                }
-            );
-
-            this.fs.copyTpl(
-                this.templatePath('_resources/layouts/nav.html'),
-                this.destinationPath('resources/views/layouts/nav.html'), {
+                this.templatePath('resources/views'),
+                this.destinationPath('resources/views'), {
                     name: this.props.name
                 }
             );

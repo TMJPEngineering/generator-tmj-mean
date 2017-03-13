@@ -6,5 +6,5 @@
 (function (app) {
     'use strict';
 
-    app.registerModule('home', ['ui.router']);
+    app.registerModule('welcome', ['ui.router']);
 })(angularAppConfig);
