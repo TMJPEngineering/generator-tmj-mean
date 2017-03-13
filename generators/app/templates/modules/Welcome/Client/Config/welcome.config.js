@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    angular.module('home')
+    angular.module('welcome')
         .config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
@@ -14,14 +14,13 @@
     function config($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('home', {
+            .state('welcome', {
                 url: '/',
                 views: {
-                    'nav': { templateUrl: 'views/layouts/nav.html' },
                     'content': {
-                        templateUrl: 'views/web/home.html',
-                        controller: 'HomeController',
-                        controllerAs: 'hc',
+                        templateUrl: 'views/welcome/index.html',
+                        controller: 'WelcomeController',
+                        controllerAs: 'wc',
                     }
                 }
             });

@@ -3,15 +3,14 @@
 
 <head>
   <base href="/">
-  <title>Login</title>
+  <title><%= name %></title>
 
-  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="public/assets/css/app.css">
 </head>
 
-<body ng-controller="AuthController as ac">
-  <div id="main">
-    <div ui-view="nav"></div>
+<body>
+  <div class="container">
     <div ui-view="content"></div>
   </div>
 
