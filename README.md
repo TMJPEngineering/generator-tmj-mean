@@ -79,19 +79,10 @@ karma start
 ├── config/
 │   └── lib/
 └── modules/
-│   ├── Auth/
-│   │   ├── Client/
-│   │   │   └── Config/
-│   │   │   └── Controllers/
-│   │   │   └── Factories/
-│   │   └── server/
-│   │       └── Controllers/
-│   │       └── Middlewares/
-│   │       └── Routes/
 │   ├── Core/
-│   ├── Home/
 │   ├── Shared/
-│   └── User/
+│   ├── User/
+│   └── Welcome/
 ├── * public/
 │   ├── * assets/
 │   │   └── * css/
