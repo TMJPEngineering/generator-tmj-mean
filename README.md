@@ -90,9 +90,7 @@ karma start
 ├── resources/
 │   ├── assets/
 │   └── views/
-│       ├── auth/
-│       ├── layouts/
-│       └── web/
+│       └── layouts/
 └── vendor/
 ```
 
