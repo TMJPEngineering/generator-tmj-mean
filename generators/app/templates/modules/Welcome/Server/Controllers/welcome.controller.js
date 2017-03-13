@@ -6,7 +6,8 @@
  */
 
 var path = require('path'),
-    root = path.dirname(require.main.filename);
+    root = path.dirname(require.main.filename),
+    view = require(root + '/vendor/view');
 
 module.exports = function (method) {
     var methods = {
@@ -18,7 +19,7 @@ module.exports = function (method) {
     function index() {
         return function (req, res, next) {
             if (req.route.methods.get) {
-                res.sendFile(root + '/resources/views/index.html');
+                view('index', res);
             }
         }
     }
