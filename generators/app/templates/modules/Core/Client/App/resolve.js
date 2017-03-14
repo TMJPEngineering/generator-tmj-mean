@@ -14,7 +14,7 @@
 
     function coreConfig($http) {
         return $http.get('config').then(function (response) {
-            // return response;
+            return response;
         }, function (err) {
             return err;
         });

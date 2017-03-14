@@ -14,7 +14,9 @@
         // Listener for response error event
         ResponseErrorEvent.listen(function(event, errorMessage) {
             // Handle errors
-            alert(errorMessage);
+            if (status !== -1) {
+                alert(errorMessage);
+            }
         });
     }
 })();

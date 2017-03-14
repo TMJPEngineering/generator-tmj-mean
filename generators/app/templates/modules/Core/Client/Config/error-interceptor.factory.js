@@ -40,12 +40,12 @@
                     $log.error('Server Error:', response);
                     break;
                 default:
-                    errorMessage = CORE_MSG.ERR_PERMISSION;
+                    errorMessage = (response.data.length !== undefined) ? response.data : 'Invalid credentials';
                     break;
             }
 
             // Fire the response error event
-            ResponseErrorEvent.fire(errorMessage);
+            ResponseErrorEvent.fire(errorMessage, response.status);
             return $q.reject(errorMessage);
         }
 

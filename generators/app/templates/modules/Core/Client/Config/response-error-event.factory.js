@@ -21,8 +21,8 @@
 
         return service;
 
-        function fire(data) {
-            $rootScope.$emit(eventName, data);
+        function fire(data, status) {
+            $rootScope.$emit(eventName, data, status);
         }
 
         function listen(callback) {
