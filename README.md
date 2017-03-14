@@ -78,7 +78,7 @@ karma start
 ```
 ├── config/
 │   └── lib/
-└── modules/
+├── modules/
 │   ├── Core/
 │   ├── Shared/
 │   ├── User/
