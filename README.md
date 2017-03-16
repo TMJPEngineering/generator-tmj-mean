@@ -80,17 +80,22 @@ karma start
 │   └── lib/
 ├── modules/
 │   ├── Core/
+│   │   ├── Client/
+│   │   └── Server/
 │   ├── Shared/
 │   ├── User/
 │   └── Welcome/
 ├── * public/
 │   ├── * assets/
-│   │   └── * css/
+│   │   ├── * css/
+│   │   └── * fonts/
 │   └── * dist/
 ├── resources/
 │   ├── assets/
+│   │   ├── fonts/
+│   │   └── scss/
 │   └── views/
-│       └── layouts/
+│       └── welcome/
 └── vendor/
 ```
 
