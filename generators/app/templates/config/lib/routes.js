@@ -29,4 +29,8 @@ module.exports = function (app) {
         req.logout();
         res.redirect('/login');
     });
+
+    app.all('/*', function (req, res) {
+        res.redirect('/');
+    });
 };

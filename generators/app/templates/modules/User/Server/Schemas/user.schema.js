@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * @author TMJP Engineering Team
+ * @copyright 2017
+ */
+
 var Mongoose = require('mongoose'),
     Schema = Mongoose.Schema,
     path = require('path'),
@@ -12,7 +17,7 @@ var Mongoose = require('mongoose'),
             type: String,
             require: true
         },
-        username: {
+        email: {
             type: String,
             require: true
         },
@@ -28,7 +33,7 @@ var Mongoose = require('mongoose'),
 userSchema.plugin(plugin);
 
 userSchema.methods.verifyPassword = function (password) {
-    return this.password === crypto.createHash('sha1').update(password).digest('hex')
+    return this.password === crypto.createHash('sha1').update(password).digest('hex');
 };
 
 module.exports = Mongoose.model('User', userSchema);

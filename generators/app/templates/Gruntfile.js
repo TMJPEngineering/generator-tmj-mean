@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     '!modules/**/Server/**/*.js',
                     'resources/assets/*.scss'
                 ],
-                tasks: ['browserify', 'uglify', 'sass']
+                tasks: ['browserify', 'uglify', 'sass', 'copy']
             },
         },
         browserify: {
@@ -84,6 +84,13 @@ module.exports = function(grunt) {
                     'public/assets/css/app.css': 'resources/assets/app.scss'
                 }
             }
+        },
+        copy: {
+            main: {
+                files: [
+                    { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' }
+                ]
+            }
         }
     });
 
@@ -91,5 +98,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
 };
