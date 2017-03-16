@@ -10,6 +10,13 @@ module.exports = {
             if (err) throw err;
         });
     },
+    findByEmail: function (email) {
+        return User.findOne({ email: email })
+        .exec(function (err, user) {
+            if (err) throw err;
+            return user;
+        });
+    },
     updateByEmail: function (email, password) {
         User.findOne({ email: email }, function (err, user) {
             if (err) throw err;
