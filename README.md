@@ -87,13 +87,14 @@ karma start
 │   └── Welcome/
 ├── * public/
 │   ├── * assets/
+│   │   ├── * bootstrap/
 │   │   ├── * css/
-│   │   └── * fonts/
+│   │   ├── * fonts/
+│   │   └── * js/
 │   └── * dist/
 ├── resources/
 │   ├── assets/
-│   │   ├── fonts/
-│   │   └── scss/
+│   │   └── fonts/
 │   └── views/
 │       └── welcome/
 └── vendor/

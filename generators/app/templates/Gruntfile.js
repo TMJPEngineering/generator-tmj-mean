@@ -80,15 +80,19 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
+                    'public/assets/css/app.css': 'resources/assets/app.scss',
                     'public/assets/css/style.css': 'resources/assets/style.scss',
-                    'public/assets/css/app.css': 'resources/assets/app.scss'
+                    'public/assets/css/font-awesome.css': 'bower_components/font-awesome/scss/font-awesome.scss'
                 }
             }
         },
         copy: {
             main: {
                 files: [
-                    { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' }
+                    { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                    { expand: true, cwd: 'bower_components/font-awesome/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                    { expand: true, cwd: 'bower_components/bootstrap/dist', src: ['**'], dest: 'public/assets/bootstrap' },
+                    { expand: true, flatten: true, cwd: 'bower_components/', src: ['**/*.min.js', '**/*.min.js.map'], dest: 'public/assets/js', filter: 'isFile' }
                 ]
             }
         }
