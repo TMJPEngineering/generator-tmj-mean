@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     '!modules/**/Server/**/*.js',
                     'resources/assets/*.scss'
                 ],
-                tasks: ['browserify', 'uglify', 'sass']
+                tasks: ['browserify', 'uglify', 'sass', 'copy']
             },
         },
         browserify: {
@@ -80,9 +80,20 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
+                    'public/assets/css/app.css': 'resources/assets/app.scss',
                     'public/assets/css/style.css': 'resources/assets/style.scss',
-                    'public/assets/css/app.css': 'resources/assets/app.scss'
+                    'public/assets/css/font-awesome.css': 'bower_components/font-awesome/scss/font-awesome.scss'
                 }
+            }
+        },
+        copy: {
+            main: {
+                files: [
+                    { expand: true, cwd: 'resources/assets/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                    { expand: true, cwd: 'bower_components/font-awesome/fonts', src: ['**'], dest: 'public/assets/fonts' },
+                    { expand: true, cwd: 'bower_components/bootstrap/dist', src: ['**'], dest: 'public/assets/bootstrap' },
+                    { expand: true, flatten: true, cwd: 'bower_components/', src: ['**/*.min.js', '**/*.min.js.map'], dest: 'public/assets/js', filter: 'isFile' }
+                ]
             }
         }
     });
@@ -91,5 +102,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
 };

@@ -81,7 +81,6 @@ module.exports = {
     },
     group: function (options, callback) {
         opts = options;
-        callback(options);
     },
     endGroup: function () {
         opts = undefined;
