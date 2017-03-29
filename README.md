@@ -45,8 +45,16 @@ yo tmj-mean
 
 Once it finished, run this command:
 
+**For development:**
+
 ```
 grunt
+```
+
+**For production:**
+
+```
+grunt prod
 ```
 
 Be sure to have [grunt](https://gruntjs.com/) installed before doing it so.
