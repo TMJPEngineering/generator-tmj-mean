@@ -45,6 +45,7 @@ module.exports = function(grunt) {
                     '!modules/Core/Client/**/*.js',
                     '!modules/**/Client/**/*.test.js',
                     '!modules/Shared/Client/**/*.module.js',
+                    '!modules/Shared/Client/**/*.js',
                     '!modules/**/Client/*.module.js'
                 ],
                 dest: 'public/dist/client.min.js'
@@ -103,5 +104,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.registerTask('default', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
+    grunt.registerTask('default', ['browserify', 'sass', 'copy', 'watch']);
+    grunt.registerTask('prod', ['browserify', 'uglify', 'sass', 'copy', 'watch']);
 };

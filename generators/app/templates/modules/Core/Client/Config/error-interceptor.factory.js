@@ -40,7 +40,7 @@
                     $log.error('Server Error:', response);
                     break;
                 default:
-                    errorMessage = (response.data.length !== undefined) ? response.data : 'Invalid credentials';
+                    errorMessage = (response.data !== {} || response.data.length !== undefined) ? response.data : 'Invalid credentials';
                     break;
             }
 
