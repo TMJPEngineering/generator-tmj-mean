@@ -45,6 +45,7 @@ module.exports = function(grunt) {
                     '!modules/Core/Client/**/*.js',
                     '!modules/**/Client/**/*.test.js',
                     '!modules/Shared/Client/**/*.module.js',
+                    '!modules/Shared/Client/**/*.js',
                     '!modules/**/Client/*.module.js'
                 ],
                 dest: 'public/dist/client.min.js'
