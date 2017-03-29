@@ -13,7 +13,8 @@
         }
 
         function linkFunction(scope, element, attr) {
-            element.on('click', function () {
+            element.on('click', function (e) {
+                e.preventDefault();
                 window.location.href = attr.href;
             });
         }
