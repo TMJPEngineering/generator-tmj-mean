@@ -10,8 +10,8 @@ var passport = require('passport'),
 module.exports = function (app) {
     // TMJ Passport
     passport.use(new TMJStrategy({
-        apiToken: process.env.BE_TALK_TOKEN,
-        url: process.env.BE_TALK_API + '/login',
+        apiToken: app.ENV.BE_TALK_TOKEN,
+        url: app.ENV.BE_TALK_API + '/login',
         usernameField: 'username',
         passwordField: 'password'
     }));

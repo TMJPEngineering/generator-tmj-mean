@@ -14,7 +14,7 @@ module.exports = function (app) {
     app.use(helmet());
     app.use(methodOverride('X-HTTP-Method-Override'));
     app.use(session({
-        secret: process.env.SESSION_SECRET || 'secret',
+        secret: app.ENV.SESSION_SECRET || 'secret',
         resave: false,
         saveUninitialized: true
     }));
