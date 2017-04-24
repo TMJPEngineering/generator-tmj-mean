@@ -10,5 +10,5 @@ module.exports = function (app) {
         console.log('connected to db');
     });
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/' + process.env.MONGO_DATABASE);
+    mongoose.connect('mongodb://localhost/' + app.ENV.MONGO_DATABASE);
 };
