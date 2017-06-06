@@ -1,6 +1,5 @@
 var ctrl = require('./controller'),
     middleware = require('./middleware'),
-    resources = require('./resources'),
     router,
     opts;
 
@@ -47,34 +46,36 @@ module.exports = {
     resource: function (uri, controller, middlewares, options) {
         this.config.set(controller);
         var $this = this;
+        var resources = require('./resources');
+
         resources = resources.filter(function(value) {
             if (options !== undefined && options.only !== undefined)
                 return options.only.indexOf(value) !== -1;
             if (options !== undefined && options.except !== undefined)
-                return options.except.indexOf(value) !== 0;
+                return options.except.indexOf(value) === 1;
             return true;
         });
         resources.forEach(function (resource) {
-            if (resource != 'store' && resource != 'update' && resource != 'destroy') {
+            if (resource !== 'store' && resource !== 'update' && resource !== 'destroy') {
                 var str = '';
-                if (resource == 'create') {
+                if (resource === 'create') {
                     str = '/create';
                 }
-                if (resource == 'show') {
+                if (resource === 'show') {
                     str = '/:id';
                 }
-                if (resource == 'edit') {
+                if (resource === 'edit') {
                     str = '/:id/edit';
                 }
                 $this.get('/' + uri + str, router.controller + '@' + resource, middlewares);
             }
-            if (resource == 'store') {
+            if (resource === 'store') {
                 $this.post('/' + uri, router.controller + '@' + resource, middlewares);
             }
-            if (resource == 'update') {
+            if (resource === 'update') {
                 $this.update('/' + uri + '/:id', router.controller + '@' + resource, middlewares);
             }
-            if (resource == 'destroy') {
+            if (resource === 'destroy') {
                 $this.delete('/' + uri + '/:id', router.controller + '@' + resource, middlewares);
             }
         });

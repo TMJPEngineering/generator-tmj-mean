@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "body-parser": "^1.15.2",
+    "compress": "^0.99.0",
     "cookie-parser": "^1.4.3",
     "csurf": "^1.9.0",
     "dotenv": "^2.0.0",
