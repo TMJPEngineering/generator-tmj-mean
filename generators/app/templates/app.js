@@ -30,7 +30,7 @@ require('./config/lib/helpers');
 require('./config/lib/body-parser')(app);
 // This library uses for security purposes like session, crsf, passport, and helmet.
 require('./config/lib/middleware')(app);
-// Set csrk token in cookie
+// Set csrf token in cookie
 require('./config/lib/csrf')(app);
 // Centralized error handler
 require('./config/lib/handler')(app);
