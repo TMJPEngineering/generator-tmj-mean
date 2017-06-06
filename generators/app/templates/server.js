@@ -9,5 +9,6 @@ io.on('connection', function(socket) {
     // TODO: Socket
 });
 
-server.listen(port);
-console.log('Node development server started on ' + process.env.NODE_URL + ':' + port + '/');
+server.listen(port, function () {
+    console.log('Node development server started on ' + app.ENV.NODE_URL);
+});
